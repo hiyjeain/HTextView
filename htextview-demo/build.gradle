@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion compile_version
-    buildToolsVersion buildToolsVer
-
+    compileSdk compile_version
+    namespace "com.hanks.htextview.example"
+    
     defaultConfig {
         applicationId "com.hanks.htextview.example"
-        minSdkVersion min_version
-        targetSdkVersion target_version
+        minSdk min_version
+        targetSdk target_version
         versionCode version_code
         versionName library_version
     }

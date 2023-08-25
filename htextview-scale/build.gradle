@@ -1,11 +1,12 @@
 apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    compileSdkVersion compile_version
-    buildToolsVersion buildToolsVer
+    compileSdk compile_version
+    namespace "com.hanks.htextview.scale"
     defaultConfig {
-        minSdkVersion min_version
-        targetSdkVersion target_version
+        minSdk min_version
+        targetSdk target_version
         versionCode version_code
         versionName library_version
     }
@@ -23,6 +24,7 @@ android {
 
 dependencies {
     implementation (project(':htextview-base')) { transitive = true }
+    implementation 'androidx.core:core-ktx:1.10.1'
 //    implementation "com.hanks:htextview-base:$library_version"
 }
 

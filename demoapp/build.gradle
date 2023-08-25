@@ -1,15 +1,16 @@
+import javax.xml.stream.events.Namespace
+
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion compile_version
-    buildToolsVersion buildToolsVer
+    compileSdk compile_version
+    namespace "com.example.demoapp"
     defaultConfig {
-        applicationId "com.example.demoapp"
-        minSdkVersion min_version
-        targetSdkVersion target_version
+        minSdk min_version
+        targetSdk target_version
         versionCode version_code
         versionName library_version
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
         release {
@@ -24,10 +25,10 @@ android {
 }
 
 dependencies {
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 
     implementation project(':htextview-base')
     implementation project(':htextview-line')
@@ -39,7 +40,7 @@ dependencies {
     implementation project(':htextview-fall')
 
     // optional
-    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 
     def htextview_version = library_version
 
